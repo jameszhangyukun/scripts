@@ -5,9 +5,9 @@ green_echo(){
 
 # 1.请配置 git-repo地址,http协议请带用户名密码，ssh协议请在仓库加入认证秘钥
 #并在阿里云镜像仓库库服务配置了自动构建镜像
-git_repo="https://yuesjgo:123qazBNM@github.com/yuesjgo/dockerfiles.git" # 与镜像构建相关的代码仓库https
+git_repo="https://github.com/jameszhangyukun/docker-images.git" # 与镜像构建相关的代码仓库https
 # git_repo="git@github.com:a001189/dockerfile-bulid.git"   # 与镜像构建相关的代码仓库（阿里云的代码仓库不稳定，勿用）
-docker_repo="registry.cn-shanghai.aliyuncs.com/ysj/googleimages" # 阿里自动构想镜像仓库
+docker_repo="registry.cn-hangzhou.aliyuncs.com/test-gool/gcr" # 阿里自动构想镜像仓库
 # 修改上述两个变量为自己私有的仓库，即可实现私有化。
 
 
@@ -36,8 +36,8 @@ mkdir $tmpdir && cd $tmpdir
 git_dir=`basename $git_repo|awk -F. '{print $1}'`
 git clone $git_repo
 cd $git_dir
-git config --local user.name "a001189"
-git config --local user.email "479100885@qq.com"
+git config --local user.name "jameszhangyukun"
+git config --local user.email "1481815567@qq.com"
 
 echo "From $image" > Dockerfile
 echo "Maintainer 479100885@qq.com" >> Dockerfile
